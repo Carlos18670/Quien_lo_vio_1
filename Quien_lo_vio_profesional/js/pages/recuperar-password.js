@@ -1,4 +1,3 @@
-
 import { supabase } from '../supabase.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const botonEnviar = document.getElementById('btn-enviar');
     const botonActualizar = document.getElementById('btn-actualizar');
+
+    // DIRECCIÓN PÚBLICA DE RECUPERACIÓN
+    const URL_RECUPERACION =
+        'https://carlos18670.github.io/Quien_lo_vio_1/Quien_lo_vio_profesional/pages/recuperar-password.html';
 
     let modoRecuperacion = false;
 
@@ -84,8 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const { error } = await supabase.auth.resetPasswordForEmail(
                 correo,
                 {
-                    redirectTo:
-                        window.location.origin + window.location.pathname
+                    redirectTo: URL_RECUPERACION
                 }
             );
 
